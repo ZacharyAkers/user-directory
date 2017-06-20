@@ -1,0 +1,58 @@
+.userRow{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.userBox{
+  border: 1px solid rgb(225, 225, 225);
+  flex-grow: 1;
+  margin: 5px;
+  width: 200px;
+}
+
+.userBox img{
+  margin-left: 15%;
+}
+
+.topName{
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  color: rgb(62, 119, 205);
+}
+
+.description{
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.userBottom{
+  display: flex;
+  flex-direction: row;
+}
+
+.imagecircle{
+  border-radius: 360px;
+  border: 1px solid rgb(225, 225, 225);
+  margin-right: 10px;
+}
+
+.bottomSection{
+  margin-left: 30%;
+  margin-top: 8%;
+
+}
+
+.bottomBox{
+  margin-left: 10%;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+}
