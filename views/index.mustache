@@ -9,32 +9,60 @@
     <h1>Index</h1>
     <div class="userRow">
       {{#users}}
-      <div class="userBox">
-        <img src="{{avatar}}" alt="">
-        <p class="topName">{{name}}</p>
-        <p class="description">{{job}}{{company}}</p>
-      </div>
+        <div class="userBox">
+          <img src={{avatar}} alt="">
+          <h3 class="topName">{{name}}</h3>
+          {{#job}}
+          <p class="description">{{job}}, {{company}}</p>
+          {{/job}}
+          {{^job}}
+          <p class="hire">Available for hire</p>
+          {{/job}}
+        </div>
       {{/users}}
-   </div>
-
-     <div class="bottomSection">
-       {{#users}}
-        <div class="userBottom">
-          <div>
-            <img class="imagecircle" src="{{avatar}}">
-          </div>
-          <div>
-            <h2>{{name}}</h2>
-            <p>{{address.city}}{{address.country}}|{{job}}{{company}}</p>
-            <p>{{email}}|{{phone}}</p>
-          </div>
-        </div>
-        <div class="bottomBox">
-          <p><strong>Education</strong> {{university}}</p>
-          <p><strong>Skills</strong> {{skills}}</p>
-        </div>
-        {{/users}}
     </div>
+
+      <div class="bottomSection">
+        {{#users}}
+          <div class="userBottom">
+            <div>
+              <img class="imagecircle" src={{avatar}} alt="">
+            </div>
+            <div>
+              <h1>{{name}}</h1>
+              <p>
+              {{#address}}
+              {{#city}}{{city}},{{/city}} {{country}}
+              {{/address}}
+              |
+              {{#job}}
+              {{job}}, {{company}}
+              {{/job}}
+              {{^job}}
+              <span class="hire">Available for hire</span>
+              {{/job}}
+              </p>
+              <p>{{email}} | {{phone}}</p>
+            </div>
+            <div class="bottomBox">
+              <table>
+              {{#university}}
+                <tr>
+                  <td><b>Education</b></td>
+                  <td>{{university}}</td>
+                </tr>
+              {{/university}}
+                <tr>
+                  <td><b>Skills</b></td>
+                  <td><ul>
+                  {{#skills}}<li>{{.}}</li>{{/skills}}
+                  </ul></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        {{/users}}
+      </div>
 
   </body>
 </html>
